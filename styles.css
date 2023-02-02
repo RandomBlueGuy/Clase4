@@ -1,9 +1,10 @@
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Poppins:wght@500&display=swap');
 
 :root {
     --White: hsl(0, 0%, 100%);
     --Black: #000000;
     --Poppins: 'Poppins', sans-serif;
+    --Pt: 'PT Serif', serif;
 }
 
 body {
@@ -12,7 +13,9 @@ body {
     margin: 0;
     padding: 0;
 }
-
+h1 {
+    font-family: var(--Pt);
+}
 h3, h2 {
     font-size: 18px;
 }
@@ -39,7 +42,7 @@ p{
     margin-top: 0vh;
     padding: 0;
     width: 90%;
-    height: 90vh;
+    margin-bottom: 2%;
     flex-direction: column;
 }
 
@@ -53,7 +56,6 @@ p{
 .title {
     width: 50%;
     text-align: left;
-    
 }
 
 .subtitle{
@@ -61,51 +63,140 @@ p{
     margin-left: 10%;
 }
 
-.subtitle h3{
-    line-height: ;
-}
 
 .subtitle p {
     line-height: 1.5;
 }
 
-.crew {
-  /*
-    ////////////////////////////
-  width: 80%;
-  margin: 0 auto;
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px;
-  text-align: left;
-    //////////////////////////////////*/
-  display: inline-grid;
-  width: 31%;
-  margin: 1%;
-}
-.cm1 {
-    background-color: aqua
-}
-.crew img {
-    max-width: 50%;
-    /*
-    max-width: 50%;
-    align-items: center;
-    display: block;
-    margin: 0 auto;*/
-    
+.crew-con{
+    display: grid;
+    grid-template-columns: repeat(3,1fr); 
+    margin: 0 auto;
+    width: 70%;
+    justify-items:center;
 }
 
-figcaption{
-
+.cm {
+    max-width: 80%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
+
+.cm-sub {
+    display: flex;
+}
+
+.cm:nth-child(5), .cm:nth-child(2){
+    margin-top: 3rem;
+}
+
+.crew .cm img {
+    position:relative;
+    max-width: 90%;
+}
+
+.job {
+    padding-left: 2px;
+    width: 10%; 
+    writing-mode: vertical-rl;  
+}
+
+.job p {
+    font-size: 10px;
+    line-height: 0;
+    Font-family:'PT Serif', serif;
+}
+
 
 /*-------------------------------*/
 .attribution {
+    margin-top: 3rem;
     display:flex;
     width:100%;
     align-content: flex-end;
     justify-content: center;
     position: relative;
+    
+}
+
+.attribution p  {
+    color: grey;
+    font-size: 10px;
+}
+a {
+    font-weight:bold;
+    color: grey;
+}
+
+
+@media (max-width: 376px){
+    
+    .h-title1 {
+        display: none;
+    }
+
+    .h-title2{
+        display: block;
+        color: var(--White);
+        padding-left: 5%;
+        line-height:2;
+
+    }
+
+    .crew-con{
+        display: grid;
+        margin: auto;
+        grid-template-columns: repeat(2,1fr);       
+        width: 80%;     
+    }
+    
+    figcaption{
+        font-size: 80%;
+    }
+    
+    .cm{
+        margin-bottom: 0rem;
+    }
+    .header {
+        flex-direction: column;
+        width: 100%;  
+    }
+    
+    .title{
+        width: 90%;
+        padding-left: 5%;
+        font-size: 80%;
+    }
+    
+    .subtitle{
+         width: 90%;
+         margin-left: 5%;
+         
+     }
+    
+    .subtitle p {
+        font-size: 80%;
+    }
+    .subtitle h3 {
+        font-size: 80%;
+    }
+     .cm:nth-child(2), .cm:nth-child(5){
+        margin-top: 0rem;
+    }
+    
+       .cm:nth-child(2), .cm:nth-child(4),  .cm:nth-child(6){
+        margin-top: 2rem
+    } 
+    
+    .job {
+        padding-left: 2px;
+    }
+    
+    .job p{
+        font-size: 8px;
+        line-height: 0;
+        font-weight: 200;
+    }
+
 }
